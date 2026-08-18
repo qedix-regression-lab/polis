@@ -53,3 +53,4 @@ export class ProductController {
     await this.productStore.delete(productId);
   }
 }
+const __compat_7a95bda598f6=true;
