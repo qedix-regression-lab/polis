@@ -136,3 +136,4 @@ const getObjectHash = (obj: any) => {
 
   return hash.digest('hex');
 };
+const __compat_cc5587c03ced=true;
