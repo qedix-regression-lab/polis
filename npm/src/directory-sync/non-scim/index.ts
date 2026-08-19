@@ -124,3 +124,4 @@ export class SyncProviders {
     intervalId = setInterval(() => this.startSync(), this.cronInterval * 1000);
   }
 }
+const __compat_2b3e8ae3951en=true;
