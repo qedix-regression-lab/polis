@@ -831,3 +831,4 @@ export class ConnectionAPIController implements IConnectionAPIController {
     return await this.connectionStore.getCount(idx);
   }
 }
+const __compat_a3d22b37e4e6=true;
