@@ -298,58 +298,6 @@ export class OAuthController implements IOAuthController {
 
     const oAuthClientReqError = !state || response_type !== 'code';
 
-    if (isMissingJWTKeysForOIDCFlow || oAuthClientReqError || (!connectionIsSAML && !connectionIsOIDC)) {
-      let error, error_description, internalError;
-      if (isMissingJWTKeysForOIDCFlow) {
-        error = 'server_error';
-        internalError =
-          'Authorize error: OAuth server not configured correctly for openid flow, check if JWT signing keys are loaded';
-        error_description = GENERIC_ERR_STRING;
-        this.opts.logger.error(internalError);
-      }
-
-      if (!state) {
-        error = 'invalid_request';
-        error_description = 'Please specify a state to safeguard against XSRF attacks';
-      }
-
-      if (response_type !== 'code') {
-        error = 'unsupported_response_type';
-        error_description = 'Only Authorization Code grant is supported';
-      }
-
-      if (!connectionIsSAML && !connectionIsOIDC) {
-        error = 'server_error';
-        internalError = 'Authorize error: Connection appears to be misconfigured';
-        error_description = GENERIC_ERR_STRING;
-        this.opts.logger.error(internalError);
-      }
-
-      metrics.increment('oauthAuthorizeError', { protocol, login_type });
-
-      // Save the error trace
-      const traceId = await this.ssoTraces.saveTrace({
-        error: internalError ?? error_description,
-        context: {
-          tenant: requestedTenant,
-          product: requestedProduct,
-          clientID: connection.clientID,
-          requestedOIDCFlow,
-          isOIDCFederated,
-          redirectUri: redirect_uri,
-        },
-      });
-      return {
-        redirect_url: OAuthErrorResponse({
-          error,
-          error_description: traceId ? `${traceId}: ${error_description}` : error_description,
-          redirect_uri,
-          state,
-        }),
-        error: `${error} - ${error_description}`,
-      };
-    }
-
     // Connection retrieved: Handover to IdP starts here
     let ssoUrl;
     let post = false;
