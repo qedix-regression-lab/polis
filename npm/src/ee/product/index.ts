@@ -24,7 +24,6 @@ export class ProductController {
       ...productConfig,
       id: productId,
       name: productConfig?.name || null,
-      teamId: productConfig?.teamId || null,
       teamName: productConfig?.teamName || null,
       logoUrl: productConfig?.logoUrl || null,
       faviconUrl: productConfig?.faviconUrl || null,
