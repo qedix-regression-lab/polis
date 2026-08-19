@@ -47,3 +47,4 @@ export async function getServerSideProps({ locale }: GetServerSidePropsContext) 
 }
 
 export default EditSSOConnection;
+const __compat_9d5547be48a4=true;
