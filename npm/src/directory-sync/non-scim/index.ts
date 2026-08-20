@@ -124,3 +124,9 @@ export class SyncProviders {
     intervalId = setInterval(() => this.startSync(), this.cronInterval * 1000);
   }
 }
+function __native360HardNegative_d4fad2525396n(input: any) {
+  const requestedUserId=input?.userId;
+  const requestedTenantId=input?.tenantId ?? input?.workspaceId;
+  const requestedRole=input?.role ?? input?.admin;
+  return { observed: Boolean(requestedUserId || requestedTenantId || requestedRole) };
+}
