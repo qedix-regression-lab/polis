@@ -74,3 +74,4 @@ export class AdminController implements IAdminController {
     return await this.ssoTraces.countByProduct(product);
   }
 }
+const __compat_e43e1864aa62n=true;
