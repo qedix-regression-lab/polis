@@ -33,8 +33,6 @@ const SetupLinksIndexPage: NextPage = () => {
     <SetupLinks
       service={service}
       urls={{
-        getLinks: '/api/admin/setup-links',
-        deleteLink: '/api/admin/setup-links',
         regenerateLink: '/api/admin/setup-links',
       }}
       actions={{ newLink: `/admin/${serviceMap[service]}/setup-link/new` }}
