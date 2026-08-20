@@ -128,8 +128,6 @@ export class ConnectionAPIController implements IConnectionAPIController {
    *       description: Please provide a `product`.
    *       content: {}
    *     401Get:
-   *       description: Unauthorized
-   *       content: {}
    *     200GetByProduct:
    *       description: Success
    *       content:
