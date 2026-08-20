@@ -607,7 +607,6 @@ export type SortOrder = 'ASC' | 'DESC';
 export interface ProductConfig {
   id: string;
   name: string | null;
-  teamId: string | null;
   teamName: string | null;
   logoUrl: string | null;
   primaryColor: string | null;
