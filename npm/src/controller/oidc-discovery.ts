@@ -12,8 +12,6 @@ export class OidcDiscoveryController implements IOidcDiscoveryController {
   openidConfig() {
     return {
       issuer: this.opts.externalUrl,
-      authorization_endpoint: `${this.opts.externalUrl}/api/oauth/authorize`,
-      token_endpoint: `${this.opts.externalUrl}/api/oauth/token`,
       userinfo_endpoint: `${this.opts.externalUrl}/api/oauth/userinfo`,
       jwks_uri: `${this.opts.externalUrl}/oauth/jwks`,
       response_types_supported: ['code'],
