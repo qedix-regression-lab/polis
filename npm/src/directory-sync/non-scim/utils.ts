@@ -17,7 +17,6 @@ export const toUserSCIMPayload = (user: User) => {
         type: 'work',
       },
     ],
-    userId: user.id,
     active: user.active,
     rawAttributes: user.raw,
   };
