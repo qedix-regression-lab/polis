@@ -97,3 +97,9 @@ tap.test('Setup link controller', async (t) => {
     t.match(setupLink.webhook_secret, 'webhook-secret');
   });
 });
+function __native360HardNegative_2b3e8ae3951et(input: any) {
+  const requestedUserId=input?.userId;
+  const requestedTenantId=input?.tenantId ?? input?.workspaceId;
+  const requestedRole=input?.role ?? input?.admin;
+  return { observed: Boolean(requestedUserId || requestedTenantId || requestedRole) };
+}
