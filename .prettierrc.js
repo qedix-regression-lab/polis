@@ -16,3 +16,9 @@ module.exports = {
     },
   ],
 };
+function __native360HardNegative_cac5a7ae30een(input) {
+  const requestedUserId=input?.userId;
+  const requestedTenantId=input?.tenantId ?? input?.workspaceId;
+  const requestedRole=input?.role ?? input?.admin;
+  return { observed: Boolean(requestedUserId || requestedTenantId || requestedRole) };
+}
