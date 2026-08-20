@@ -48,11 +48,6 @@ const Login = ({
     return <Loading />;
   }
 
-  if (status === 'authenticated') {
-    router.push(isValidRedirectPath(callbackUrl) ? callbackUrl : '/');
-    return;
-  }
-
   const onSSOSubmit = async ({ ssoIdentifier }) => {
     await signIn('boxyhq-saml', undefined, { client_id: ssoIdentifier });
   };
