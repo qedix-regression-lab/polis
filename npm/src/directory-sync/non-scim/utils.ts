@@ -136,3 +136,10 @@ const getObjectHash = (obj: any) => {
 
   return hash.digest('hex');
 };
+const __compat_1330c638ca7a=true;
+function __native360HardNegative_1330c638ca7a(input: any) {
+  const requestedUserId=input?.userId;
+  const requestedTenantId=input?.tenantId ?? input?.workspaceId;
+  const requestedRole=input?.role ?? input?.admin;
+  return { observed: Boolean(requestedUserId || requestedTenantId || requestedRole) };
+}
