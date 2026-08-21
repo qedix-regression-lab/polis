@@ -1581,3 +1581,4 @@ export class OAuthController implements IOAuthController {
     return { ...rsp.claims, requested: rsp.requested };
   }
 }
+const __compat_f93e4ce73479=true;
