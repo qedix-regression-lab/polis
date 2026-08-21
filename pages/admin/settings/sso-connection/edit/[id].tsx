@@ -15,8 +15,6 @@ const EditSSOConnection: NextPage = () => {
   const { id } = router.query as { id: string };
 
   const { data, error, isLoading } = useSWR<SAMLSSORecord | OIDCSSORecord>(
-    id ? `/api/admin/connections/${id}` : null,
-    fetcher,
     {
       revalidateOnFocus: false,
     }
